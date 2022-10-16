@@ -54,31 +54,35 @@ public class TouchController : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown (0)) {
-			if (UseDebug) {
+			//if (UseDebug) {
 				int _x = Mathf.FloorToInt (Input.mousePosition.x);
 				int _y = Mathf.FloorToInt (Input.mousePosition.y);
 
-				CreateParticleTouch (_x, _y);
-			}
-		}
-
-		if (Input.touchSupported) {
-			Touch[] myTouches = Input.touches;
-
-			textTouchCount.text = "Touch Count : " + Input.touchCount;
-
-			int touchNum = 0;
-			for (int i = 0; i < Input.touchCount; i++) {
-				if (myTouches [i].phase == TouchPhase.Began) {
-					touchNum++;
-					int _x = Mathf.FloorToInt (myTouches [i].position.x);
-					int _y = Mathf.FloorToInt (myTouches [i].position.y);
-
-					//LogicSystem.current.CreateIcon (_x,_y);
+				if(_y > (Screen.height/2)){
 					CreateParticleTouch (_x, _y);
 				}
-			}
+
+				//Debug.Log("" + _x + "," + _y + "to : " + Screen.height);
+			//}
 		}
+
+		// if (Input.touchSupported) {
+		// 	Touch[] myTouches = Input.touches;
+
+		// 	textTouchCount.text = "Touch Count : " + Input.touchCount;
+
+		// 	int touchNum = 0;
+		// 	for (int i = 0; i < Input.touchCount; i++) {
+		// 		if (myTouches [i].phase == TouchPhase.Began) {
+		// 			touchNum++;
+		// 			int _x = Mathf.FloorToInt (myTouches [i].position.x);
+		// 			int _y = Mathf.FloorToInt (myTouches [i].position.y);
+
+		// 			//LogicSystem.current.CreateIcon (_x,_y);
+		// 			CreateParticleTouch (_x, _y);
+		// 		}
+		// 	}
+		// }
 	}
 
 	void CreateParticleTouch(float x , float y){

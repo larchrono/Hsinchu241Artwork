@@ -34,6 +34,7 @@ public class SpriteMove : MonoBehaviour
             Vector2 hitPoint = missileHit.point;
             Instantiate(MainSceneLogic.instance.HitEffect, new Vector3(hitPoint.x, hitPoint.y, 0), Quaternion.identity);
             MainSceneLogic.instance.mainAudioSource.PlayOneShot(MainSceneLogic.instance.HitSound);
+            break;
         }
         Destroy(gameObject, 5);
     }

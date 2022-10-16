@@ -26,8 +26,8 @@ public class DisplayScript : MonoBehaviour
 		if (Display.displays.Length > 2)
 			Display.displays[2].Activate();
 		
-		Screen.fullScreen = true;
-		Debug.Log("Set to full Screen");
+		//Screen.fullScreen = true;
+		//Debug.Log("Set to full Screen");
 	}
 
 	void Update(){
